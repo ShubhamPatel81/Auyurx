@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container bg-red-400 text-center mt-4">
+    <!--  message box alert  -->
+    <div th:replace="message::messageBox"></div>
+
+    <h1 class="text-red-600">
+        Something wend Wrong . Email Not Verified !!!
+    </h1>
+    <a href="/login" class="bg-gray-900 text-white m-2 px-4 py-3">Login</a>
+</div>
+</body>
+</html>

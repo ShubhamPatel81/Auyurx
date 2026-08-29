@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+</head>
+<body>
+<div id="content">
+    <div class="grid grid-cols-12 min-h-screen items-center">
+        <!-- Empty columns for spacing -->
+        <div class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+            <!-- Centered content -->
+            <div
+                    class="block max-w-md w-full p-6 border-t-[10px] border-green-700 bg-white rounded-xl shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-green-700 dark:hover:bg-gray-700"
+            >
+                <!--  message box alert  -->
+                <div th:replace="~{message::messageBox}"></div>
+
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Login Here
+                </h5>
+
+                <div class="text-red-400 text-center"  th:if="${param.error}">
+                    Invalid username and password.</div>
+                <div class= "text-green-400 text-center"   th:if="${param.logout}">
+                    You have been logged out.</div>
+
+                <form method="post" th:action="@{/login}">
+
+                    <!-- ------ Email field ---------  -->
+                    <div class="mb-3">
+                        <label
+                                for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Email</label
+                        >
+                        <input
+                                name="email"
+                                type="email"
+                                id="email"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="name@email.com"
+                                required
+                        />
+                    </div>
+
+                    <!-- ------ Password --------------->
+                    <div class="mb-5">
+                        <label
+                                for="password"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Password</label
+                        >
+                        <input
+                                name="password"
+                                type="password"
+                                id="password"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Enter Password"
+                                required
+                        />
+                    </div>
+
+                    <!--  Buttons  -->
+                    <div class="mb-3 flex justify-center space-x-3">
+                        <button
+                                class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue-800 hover:dark:bg-blue-400 hover:bg-gray-900"
+                                type="submit"
+                        >
+                            Login
+                        </button>
+                        <button
+                                class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue-800 hover:dark:bg-blue-400 hover:bg-gray-900"
+                                type="reset"
+                        >
+                            Reset
+                        </button>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <script>
+        console.log("Login Script tag");
+    </script>
+</body>
+</html>

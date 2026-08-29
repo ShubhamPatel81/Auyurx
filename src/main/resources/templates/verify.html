@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Email Verification</title>
+</head>
+
+<body>
+
+<h2>Email Verification</h2>
+
+<form th:action="@{/verifyUser}" method="post">
+
+  <input type="hidden" name="email" th:value="${email}">
+
+  <label>Enter OTP</label>
+  <br>
+  <input type="text" name="otp" placeholder="4 digit OTP">
+
+  <br><br>
+
+  <label>Enter Password</label>
+  <br>
+  <input type="password" name="password" placeholder="Password">
+
+  <br><br>
+
+  <button type="submit">Verify</button>
+
+</form>
+
+</body>
+</html>
